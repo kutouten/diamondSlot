@@ -1,0 +1,4 @@
+name: diamondSlot
+version: '0.0.1'
+main: com.github.kutouten.diamondSlot.DiamondSlot
+api-version: '1.21'
