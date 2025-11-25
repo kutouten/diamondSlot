@@ -2,3 +2,16 @@ name: diamondSlot
 version: '0.0.1'
 main: com.github.kutouten.diamondSlot.DiamondSlot
 api-version: '1.21'
+
+commands:
+  dsgive:
+    description: Admin can get op item.
+    permission: diamondSlot.admin
+
+permissions:
+  diamondSlot.admin:
+    description: Allows access to admin features.
+    default: op
+  diamondSlot.user:
+    description: Allows access to basic user features.
+    default: true
