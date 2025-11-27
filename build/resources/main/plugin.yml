@@ -7,6 +7,9 @@ commands:
   dsgive:
     description: Admin can get op item.
     permission: diamondSlot.admin
+  dscoin:
+    description: Admin can edit player coin
+    permission: diamondSlot.admin
 
 permissions:
   diamondSlot.admin:

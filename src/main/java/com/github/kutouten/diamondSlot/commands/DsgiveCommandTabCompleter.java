@@ -14,8 +14,7 @@ public class DsgiveCommandTabCompleter implements TabCompleter {
 
         if (args.length == 1) {
             return Arrays.asList(
-                    "slot_setter",
-                    "slot_deleter"
+                    "slot_setter"
             );
         }
 

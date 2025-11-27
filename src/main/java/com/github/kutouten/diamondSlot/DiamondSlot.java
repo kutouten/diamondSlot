@@ -1,5 +1,6 @@
 package com.github.kutouten.diamondSlot;
 
+import com.github.kutouten.diamondSlot.commands.DscoinCommand;
 import com.github.kutouten.diamondSlot.commands.DsgiveCommand;
 import com.github.kutouten.diamondSlot.commands.DsgiveCommandTabCompleter;
 import com.github.kutouten.diamondSlot.gui.menus.SlotSetupMenu;
@@ -25,6 +26,7 @@ public final class DiamondSlot extends JavaPlugin {
 
         // commands
         Objects.requireNonNull(this.getCommand("dsgive")).setExecutor(new DsgiveCommand());
+        Objects.requireNonNull(this.getCommand("dscoin")).setExecutor(new DscoinCommand());
         // commandTabCompleter
         Objects.requireNonNull(getCommand("dsgive")).setTabCompleter(new DsgiveCommandTabCompleter());
         // event listeners
