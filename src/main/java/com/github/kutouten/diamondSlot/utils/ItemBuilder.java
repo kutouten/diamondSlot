@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+import com.github.kutouten.diamondSlot.DiamondSlot;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
@@ -21,22 +22,21 @@ import org.bukkit.plugin.Plugin;
 public class ItemBuilder {
 
     private final ItemStack is;
-    private final Plugin plugin;
+    private final Plugin plugin = DiamondSlot.getPlugin();
 
-    public ItemBuilder(Plugin plugin, Material m) {
-        this.plugin = plugin;
+    public ItemBuilder(Material m) {
         this.is = new ItemStack(m, 1);
     }
 
-    public ItemBuilder(Plugin plugin, ItemStack is) {
-        this.plugin = plugin;
+    public ItemBuilder(ItemStack is) {
         this.is = is.clone();
     }
 
-    public ItemBuilder(Plugin plugin, Material m, int amount) {
-        this.plugin = plugin;
+    public ItemBuilder(Material m, int amount) {
         this.is = new ItemStack(m, amount);
     }
+
+
 
     public ItemBuilder setDurability(int damage) {
         ItemMeta meta = is.getItemMeta();
