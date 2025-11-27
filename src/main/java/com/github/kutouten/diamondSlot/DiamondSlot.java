@@ -10,6 +10,8 @@ import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.Objects;
+
 public final class DiamondSlot extends JavaPlugin {
     private static DiamondSlot plugin;
     private static SlotSetupMenu slotSetupMenu;
@@ -18,16 +20,16 @@ public final class DiamondSlot extends JavaPlugin {
     public void onEnable() {
         plugin = this;
         slotSetupMenu = new SlotSetupMenu();
+        //item定義
+        new ItemManager();
 
         // commands
-        this.getCommand("dsgive").setExecutor(new DsgiveCommand());
+        Objects.requireNonNull(this.getCommand("dsgive")).setExecutor(new DsgiveCommand());
         // commandTabCompleter
-        getCommand("dsgive").setTabCompleter(new DsgiveCommandTabCompleter());
+        Objects.requireNonNull(getCommand("dsgive")).setTabCompleter(new DsgiveCommandTabCompleter());
         // event listeners
         Bukkit.getPluginManager().registerEvents(new PlayerInteractListener(),this);
         Bukkit.getPluginManager().registerEvents(new InventoryClickListener(), this);
-        // items
-        new ItemManager(this);
     }
 
     @Override
