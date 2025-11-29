@@ -8,6 +8,7 @@ import org.bukkit.plugin.Plugin;
 import java.io.File;
 import java.io.IOException;
 import java.util.UUID;
+import java.util.logging.Level;
 
 public class CurrencyManager {
 
@@ -55,8 +56,7 @@ public class CurrencyManager {
         try {
             config.save(file);
         } catch (IOException e) {
-            plugin.getLogger().warning("Failed to save currency.yml");
-            e.printStackTrace();
+            plugin.getLogger().log(Level.SEVERE, "Failed to save currency.yml", e);
         }
     }
 }
