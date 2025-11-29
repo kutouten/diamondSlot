@@ -1,5 +1,6 @@
 package com.github.kutouten.diamondSlot.data;
 
+import com.github.kutouten.diamondSlot.DiamondSlot;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
@@ -14,8 +15,8 @@ public class CurrencyManager {
     private final File file;
     private final Plugin plugin;
 
-    public CurrencyManager(Plugin plugin) {
-        this.plugin = plugin;
+    public CurrencyManager() {
+        this.plugin = DiamondSlot.getPlugin();
         this.file = new File(plugin.getDataFolder(), "currency.yml");
 
         if (!file.exists()) {

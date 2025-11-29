@@ -1,6 +1,7 @@
 package com.github.kutouten.diamondSlot.gui.menus;
 
 
+import com.github.kutouten.diamondSlot.items.manager.ItemManager;
 import com.github.kutouten.diamondSlot.utils.ItemBuilder;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
@@ -12,7 +13,7 @@ public class SlotSetupMenu {
 
     public SlotSetupMenu(){
         Inventory inventory = Bukkit.createInventory(null, 27, Component.text("Slot Setup Menu"));
-        inventory.setItem(13, new ItemBuilder(Material.TROPICAL_FISH_BUCKET).setName("Uparupa").toItemStack());
+        inventory.setItem(13, ItemManager.GUI_SLOT_SETTER);
         this.inv = inventory;
     }
     public Inventory getInventory() {

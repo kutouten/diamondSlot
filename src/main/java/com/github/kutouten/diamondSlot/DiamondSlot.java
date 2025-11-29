@@ -21,7 +21,7 @@ public final class DiamondSlot extends JavaPlugin {
     public void onEnable() {
         plugin = this;
         slotSetupMenu = new SlotSetupMenu();
-        //item定義
+        // Manager
         new ItemManager();
 
         // commands

@@ -13,10 +13,10 @@ import java.util.Objects;
 import java.util.UUID;
 
 public class DscoinCommand implements CommandExecutor {
-    private final CurrencyManager currencyManager;
+    private CurrencyManager currencyManager;
 
     public DscoinCommand() {
-        this.currencyManager = new CurrencyManager(DiamondSlot.getPlugin());
+        this.currencyManager = new CurrencyManager();
     }
 
     @Override
@@ -67,9 +67,7 @@ public class DscoinCommand implements CommandExecutor {
                     sender.sendMessage(ChatColor.RED + "操作は add / remove / set のいずれかを指定してください。");
                     break;
             }
-
         }
-
 
         return true;
     }
