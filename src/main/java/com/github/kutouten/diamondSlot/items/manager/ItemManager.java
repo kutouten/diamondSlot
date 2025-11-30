@@ -8,6 +8,7 @@ public class ItemManager {
     public static ItemStack SLOT_SETTER;
     // gui item
     public static ItemStack GUI_SLOT_SETTER;
+    public static ItemStack GUI_CANCEL;
 
 
     public ItemManager() {
@@ -20,6 +21,6 @@ public class ItemManager {
 
         // gui item
         GUI_SLOT_SETTER = new ItemBuilder(Material.TROPICAL_FISH_BUCKET).setPdc("gui", "uparupa").setName("Uparupa").addGlow().toItemStack();
-
+        GUI_CANCEL = new ItemBuilder(Material.BARRIER).setPdc("gui", "cancel").setName("back").toItemStack();
     }
 }

@@ -10,8 +10,9 @@ public class SlotSetupMenu {
     private final Inventory inv;
 
     public SlotSetupMenu(){
-        Inventory inventory = Bukkit.createInventory(null, 27, Component.text("Slot Setup Menu"));
-        inventory.setItem(13, ItemManager.GUI_SLOT_SETTER);
+        Inventory inventory = Bukkit.createInventory(null, 9, Component.text("Slot Setup Menu"));
+        inventory.setItem(4, ItemManager.GUI_SLOT_SETTER);
+        inventory.setItem(8, ItemManager.GUI_CANCEL);
         this.inv = inventory;
     }
     public Inventory getInventory() {
