@@ -20,13 +20,11 @@ dependencies {
 
 tasks {
     runServer {
-        // Configure the Minecraft version for our task.
-        // This is the only required configuration besides applying the plugin.
-        // Your plugin's jar (or shadowJar if present) will be used automatically.
         minecraftVersion("1.21")
     }
 }
 
+// Java設定
 def targetJavaVersion = 21
 java {
     def javaVersion = JavaVersion.toVersion(targetJavaVersion)
@@ -45,6 +43,7 @@ tasks.withType(JavaCompile).configureEach {
     }
 }
 
+// plugin.yml のバージョン展開
 processResources {
     def props = [version: version]
     inputs.properties props
@@ -53,3 +52,18 @@ processResources {
         expand props
     }
 }
+
+def serverDir = "C:/Users/hiro0/OneDrive/Desktop/minecraftPaperServer"
+
+task copyJar(type: Copy) {
+    dependsOn build
+    from jar
+    into "$serverDir/plugins"
+}
+
+// build の後に copyJar を実行
+tasks.named("build") {
+    finalizedBy("copyJar")
+}
+
+
