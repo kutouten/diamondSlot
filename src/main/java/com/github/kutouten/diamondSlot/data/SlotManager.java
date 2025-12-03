@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class SlotManager {
 
@@ -61,7 +62,7 @@ public class SlotManager {
                 config.set(key + ".rb_count", d.rb_count);
                 config.set(key + ".spin_count_now", d.spin_count_now);
                 config.set(key + ".spin_count_total", d.spin_count_total);
-                config.set(key + ".player_name", d.player_name);
+                config.set(key + ".player_name", d.player_uuid);
             }
             config.save(file);
         } catch (IOException e) {
@@ -83,7 +84,7 @@ public class SlotManager {
 
     public SlotData getSlot(Player p) {
         for(SlotData d : slotDataList) {
-            if (d.player_name != null && d.player_name.equals(p.getName())) {
+            if (Objects.equals(d.player_uuid, p.getUniqueId().toString())) {
                 return d;
             }
         }
